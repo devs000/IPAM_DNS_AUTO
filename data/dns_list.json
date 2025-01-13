@@ -1,0 +1,40 @@
+{
+    "dns": [
+        {
+            "ip": "192.168.1.15",
+            "hostname": "host1.devops.com"
+        },
+        {
+            "ip": "192.168.1.24",
+            "hostname": "host2.devops.com"
+        },
+        {
+            "ip": "192.168.1.22",
+            "hostname": "host3.devops.com"
+        },
+        {
+            "ip": "192.168.1.27",
+            "hostname": "host4.devops.com"
+        },
+        {
+            "ip": "192.168.1.19",
+            "hostname": "host5.devops.com"
+        },
+        {
+            "ip": "192.168.1.5",
+            "hostname": "host7.devops.com"
+        },
+        {
+            "ip": "192.168.1.18",
+            "hostname": "host8.devops.com"
+        },
+        {
+            "ip": "192.168.1.8",
+            "hostname": "host9.devops.com"
+        },
+        {
+            "ip": "192.168.1.13",
+            "hostname": "host10.devops.com"
+        }
+    ]
+}

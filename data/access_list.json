@@ -1,0 +1,54 @@
+{
+    "manager_access": [
+        {
+            "hostname": "host1.devops.com",
+            "username": "root",
+            "password": "\\<(!&%v\"jW"
+        },
+        {
+            "hostname": "host2.devops.com",
+            "username": "root",
+            "password": "AEt&GA!kgP"
+        },
+        {
+            "hostname": "host3.devops.com",
+            "username": "root",
+            "password": "E\"uij;SJ.e"
+        },
+        {
+            "hostname": "host4.devops.com",
+            "username": "root",
+            "password": "_vD`M9^;H#"
+        },
+        {
+            "hostname": "host5.devops.com",
+            "username": "root",
+            "password": "o4J$B\\`uC0"
+        },
+        {
+            "hostname": "host6.devops.com",
+            "username": "root",
+            "password": "3dapDF^B3}"
+        },
+        {
+            "hostname": "host7.devops.com",
+            "username": "root",
+            "password": "X^)pC]Sj2Z"
+        },
+        {
+            "hostname": "host8.devops.com",
+            "username": "root",
+            "password": "+x?0=e.H7V"
+        },
+        {
+            "hostname": "host9.devops.com",
+            "username": "root",
+            "password": "50!^C%v&ie"
+        },
+        {
+            "hostname": "host10.devops.com",
+            "username": "root",
+            "password": "{zf@JZZ(}`"
+        }
+    ]
+}

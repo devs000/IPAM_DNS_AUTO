@@ -1,0 +1,60 @@
+#SPDX-License-Identifier: MIT-0
+---
+
+- name: Créer une liste factice pour boucler 10 fois
+  set_fact:
+    range_list: "{{ range(0, 10) | list }}"
+
+- name: Obtenir une IP libre depuis IPAM
+  ipam_free_ip:
+    api_url: "http://127.0.0.1:8000"
+  register: ipam_result
+  loop: "{{ range_list }}"
+  loop_control:
+    loop_var: renge_item
+
+- name: Reserve IP and add hostname
+  uri:
+    url: "http://127.0.0.1:8000/ipam/reserve_ip"
+    method: POST
+    body_format: json
+    body:
+      ip: "{{ item.response.free_ip }}"
+      hostname: "{{ hostnames[item.renge_item] }}"
+    return_content: no
+  register: hostname_result
+  loop: "{{ ipam_result.results }}"
+  loop_control:
+    loop_var: item
+  ignore_errors: true  # Ignorer les erreurs et continuer
+
+- name: Reserve IP and Hostname
+  uri:
+    url: "http://127.0.0.1:8000/dns/reserve_dns"
+    method: POST
+    body_format: json
+    body:
+      ip: "{{ item.response.free_ip }}"
+      hostname: "{{ hostnames[item.renge_item] }}"
+    return_content: no
+  register: result_ip
+  loop: "{{ ipam_result.results }}"
+  loop_control:
+    loop_var: item
+  ignore_errors: true  # Ignorer les erreurs et continuer
+
+- name: Send POST request to manage_access
+  uri:
+    url: "http://127.0.0.1:8000/access/manage_secret"
+    method: POST
+    body_format: json
+    body:
+      hostname: "{{ hostnames[item.renge_item] }}"
+      username: "root"
+    return_content: yes
+    status_code: 201  # Accepter le code de statut 201
+  register: response
+  loop: "{{ ipam_result.results }}"
+  loop_control:
+    loop_var: item
+  ignore_errors: true  # Ignorer les erreurs et continuer

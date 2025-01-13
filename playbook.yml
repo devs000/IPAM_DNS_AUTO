@@ -1,0 +1,17 @@
+---
+- name: Start IPAM and DNS servers
+  hosts: localhost
+  vars:
+    hostnames:
+      - host1.devops.com
+      - host2.devops.com
+      - host3.devops.com
+      - host4.devops.com
+      - host5.devops.com
+      - host6.devops.com
+      - host7.devops.com
+      - host8.devops.com
+      - host9.devops.com
+      - host10.devops.com
+  roles:
+    - ipam_dns_role
